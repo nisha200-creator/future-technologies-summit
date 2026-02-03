@@ -1,0 +1,383 @@
+/* 
+
+.agenda-section {
+  padding: 120px 80px;
+  background: radial-gradient(
+    circle at top,
+    rgba(122, 92, 255, 0.15),
+    #05010d 60%
+  );
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.agenda-section::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle,
+    rgba(122, 92, 255, 0.12),
+    transparent 70%
+  );
+  animation: floatGlow 18s linear infinite;
+}
+
+@keyframes floatGlow {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(6%, -4%); }
+  100% { transform: translate(0, 0); }
+}
+
+
+.agenda-title {
+  text-align: center;
+  font-size: 46px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+
+.day-switch {
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.day-switch a {
+  margin: 0 18px;
+  padding: 14px 36px;
+  border-radius: 40px;
+  border: 1px solid rgba(122, 92, 255, 0.5);
+  color: #b9b3ff;
+  text-decoration: none;
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+  transition: all 0.4s ease;
+}
+
+.day-switch a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(122, 92, 255, 0.35);
+}
+
+.day-switch a.active {
+  background: linear-gradient(135deg, #7a5cff, #9f8bff);
+  color: #fff;
+  box-shadow: 0 12px 45px rgba(122, 92, 255, 0.5);
+}
+
+
+.agenda-list {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+
+.agenda-card {
+  position: relative;
+  padding: 28px 34px;
+  margin-bottom: 28px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  transform: translateY(20px);
+  animation: cardFadeUp 0.9s ease forwards;
+}
+
+.agenda-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #7a5cff,
+    transparent
+  );
+}
+
+.agenda-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+@keyframes cardFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.agenda-card .time {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #7a5cff;
+  margin-bottom: 8px;
+}
+
+.agenda-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 6px 0 8px;
+}
+
+.agenda-card p {
+  opacity: 0.85;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.agenda-card small {
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+
+.no-data {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 16px;
+  padding: 40px 0;
+} */
+
+
+
+/* ================= AGENDA SECTION ================= */
+
+.agenda-section {
+  padding: 120px 80px;
+  background: #05010d;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= MOVING GLOW BACKGROUND ================= */
+
+.agenda-section::before,
+.agenda-section::after {
+  content: "";
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  top: -30%;
+  left: -30%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.agenda-section::before {
+  background:
+    radial-gradient(circle at 25% 30%, rgba(122, 92, 255, 0.45), transparent 40%),
+    radial-gradient(circle at 75% 70%, rgba(159, 139, 255, 0.35), transparent 45%);
+  animation: agendaGlow1 24s linear infinite;
+}
+
+.agenda-section::after {
+  background:
+    radial-gradient(circle at 70% 25%, rgba(122, 92, 255, 0.30), transparent 38%),
+    radial-gradient(circle at 30% 75%, rgba(159, 139, 255, 0.25), transparent 42%);
+  animation: agendaGlow2 36s linear infinite;
+}
+
+
+@keyframes agendaGlow1 {
+  0%   { transform: translate(0%, 0%) rotate(0deg); }
+  50%  { transform: translate(10%, -8%) rotate(180deg); }
+  100% { transform: translate(0%, 0%) rotate(360deg); }
+}
+
+@keyframes agendaGlow2 {
+  0%   { transform: translate(0%, 0%) rotate(0deg); }
+  50%  { transform: translate(-8%, 10%) rotate(-180deg); }
+  100% { transform: translate(0%, 0%) rotate(-360deg); }
+}
+
+
+
+
+
+
+
+
+
+/* ================= CONTENT LAYER FIX ================= */
+
+.agenda-title,
+.day-switch,
+.agenda-list {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= TITLE ================= */
+
+.agenda-title {
+  text-align: center;
+  font-size: 46px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+/* ================= DAY SWITCH ================= */
+
+.day-switch {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.day-switch a {
+  margin: 0 18px;
+  padding: 14px 36px;
+  border-radius: 40px;
+  border: 1px solid rgba(122, 92, 255, 0.5);
+  color: #b9b3ff;
+  text-decoration: none;
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+  transition: all 0.4s ease;
+}
+
+.day-switch a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(122, 92, 255, 0.35);
+}
+
+.day-switch a.active {
+  background: linear-gradient(135deg, #7a5cff, #9f8bff);
+  color: #fff;
+  box-shadow: 0 12px 45px rgba(122, 92, 255, 0.5);
+}
+
+/* ================= AGENDA LIST ================= */
+
+.agenda-list {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ================= AGENDA CARD ================= */
+
+.agenda-card {
+  position: relative;
+  padding: 28px 34px;
+  margin-bottom: 28px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFadeUp 0.9s ease forwards;
+}
+
+/* Left glowing line */
+.agenda-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #7a5cff, transparent);
+}
+
+/* Hover effect */
+.agenda-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Card entry animation */
+@keyframes cardFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= CARD CONTENT ================= */
+
+.agenda-card .time {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #7a5cff;
+  margin-bottom: 8px;
+}
+
+.agenda-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 6px 0 8px;
+}
+
+.agenda-card p {
+  opacity: 0.85;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.agenda-card small {
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.no-data {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 16px;
+  padding: 40px 0;
+}
+
+
+
+
+/*  .agenda-section::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(122,92,255,.18),
+    transparent 65%
+  );
+  animation: lightSweep 14s linear infinite;
+}
+
+@keyframes lightSweep {
+  from {
+    transform: translateX(-30%) translateY(30%);
+  }
+  to {
+    transform: translateX(30%) translateY(-30%);
+  }
+}
+ */

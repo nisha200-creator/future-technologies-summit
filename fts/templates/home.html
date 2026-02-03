@@ -9,21 +9,30 @@
 
 
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <!-- <video class="bg-media active"
+         src="{% static 'videos/demo_video3.mp4' %}"
+         autoplay
+         muted
+         playsinline>
+  </video> -->
+
+  <img class="bg-media"
+       src="{% static 'images/fts-img1.jpeg' %}" />
+
+  <img class="bg-media"
+       src="{% static 'images/fts-img2.jpeg' %}" />
+  </div>
 
   <div class="hero-content">
-    <!-- <span class="date">JAN 29 – FEB 1, 2026</span> -->
-
     <h1>
       FUTURE<br />
       TECHNOLOGIES<br />
       SUMMIT
     </h1>
-   
+
     <p>
-      India’s Biggest Futuristic & Vibrant Festival returns,
-      where ideas ignite, innovations take shape,
-      and the world meets tomorrow.
+      Experience The Future At Future Technologies Summit
     </p>
   </div>
 
@@ -40,12 +49,16 @@
 </section>
 
 
+<!-- example -->
+
+
+
+
 <section class="about-section">
   <div class="about-bg"></div>
 
   <div class="about-container">
     <div class="about-left">
-      <!-- <span class="about-tag">India International Centre, New Delhi</span> -->
       <h2>
         REVIEW OF<br>
         FUTURE TECHNOLOGIES <br>
@@ -76,10 +89,10 @@
   </div>
 
   <div class="about-images">
-    <img src="{% static 'images/img1.avif' %}">
-    <img src="{% static 'images/img2.avif' %}">
-    <img src="{% static 'images/img3.avif' %}">
-    <img src="{% static 'images/img3.avif' %}">
+    <img src="{% static 'images/fts-img1.jpeg' %}">
+    <img src="{% static 'images/fts-img2.jpeg' %}">
+    <img src="{% static 'images/fts-img3.jpeg' %}">
+    <img src="{% static 'images/fts-img4.jpeg' %}">
   </div>
 </section>
 
@@ -91,19 +104,13 @@
 
 <section class="why-section">
   <div class="why-left">
-    <img src="{% static 'images/img3.avif' %}" alt="Why Summit">
+    <img src="{% static 'images/fts-img1.jpeg' %}" alt="Why Summit">
   </div>
 
   <div class="why-right">
     <div class="why-content">
       <h2>FUTURE TECH SUMMIT <br>OVERVIEW<br></h2>
-
-      <!-- <p class="subtitle">
-        Discover ideas, experiences, and opportunities that shape tomorrow.
-      </p> -->
-
       <div class="why-item">
-        <!-- <h3>Meet Global Experts</h3> -->
         <p>
           The future tech summit 2025 is a premier gathering of industry leaders, innovators, and visionaries dedicated
           to shaping the technological landscape of tomorrow. as one of the top technology events in india, this
@@ -115,7 +122,6 @@
           the future of futuretech.
         </p>
       </div>
-
       <div class="why-item">
         <h3>Exploring the Future of Innovation</h3>
         <p>
@@ -125,7 +131,6 @@
           developments that redefine the future.
         </p>
       </div>
-
       <div class="why-item">
         <h3>Insightful Discussions</h3>
         <p>
@@ -135,7 +140,6 @@
           takeaways to drive strategic growth.
         </p>
       </div>
-
       <div class="why-item">
         <h3>Empowering Startups</h3>
         <p>
@@ -150,25 +154,25 @@
 </section>
 
 
-<section class="small_description-section">
-  <div class="small_description-bg"></div>
+<section class="small_description-section ">
+  <div class="small_description-bg">
+
+
+  </div>
+  
+
 
   <div class="small_description-header">
-    <!-- <span class="small_description-tag">OUR TRACKS</span> -->
-    <h2>Anticipated Outcomes</h2>
+    <h2>ANTICIPATED OUTCOMES</h2>
   </div>
 
   <div class="small_description-card">
     <div class="small_description-left">
       <span class="small_description-number">1</span>
       <img src="{% static 'images/img3.avif' %}" alt="Future of Education">
-      <!-- <span class="small_description-label">TRACK</span> -->
     </div>
 
     <div class="small_description-right">
-      <!-- <h3>FUTURE OF<br>EDUCATION</h3> -->
-      <!-- <span class="small_description-category">EDUCATION</span> -->
-
       <p>
         As the event progresses, the agenda is designed to ignite meaningful discussions, foster collaborations, and
         uncover groundbreaking discoveries. By uniting thought leaders and innovators from diverse sectors, the event
@@ -188,5 +192,173 @@
     </div>
   </div>
 </section>
+
+
+<section class="gallery-section">
+  <div class="gallery-wrapper">
+
+    <div class="gallery-card">
+      <img src="{% static 'images/img4.jpg' %}" alt="Track 1">
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'images/img5.jpg' %}" alt="Track 2">
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'images/img6.jpg' %}" alt="Track 3">
+    </div>
+
+    <div class="gallery-card">
+      <img src="{% static 'images/img7.jpg' %}" alt="Track 4">
+    </div>
+    <div class="gallery-card">
+      <img src="{% static 'images/img8.jpg' %}" alt="Track 4">
+    </div>
+  </div>
+</section>
+
+
+<section class="photo-slide-section">
+  <span class="small_description-tag">RECAP</span>
+  <h2 class="photo-slide-title">
+    LAST YEAR AT THE<br>SUMMIT OF FUTURE
+  </h2>
+
+  <div class="photo-slide-wrapper">
+    <div class="photo-slide-track">
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img1.jpeg' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img2.jpeg' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img3.jpeg' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img4.jpeg' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img5.avif' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img6.avif' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img7.avif' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img8.avif' %}" /></div>
+      <!-- duplicate for loop -->
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img1.jpeg' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img2.jpeg' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img3.jpeg' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img4.jpeg' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img5.avif' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img6.avif' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img7.avif' %}" /></div>
+      <div class="photo-slide-card"><img src="{% static 'images/fts-img8.avif' %}" /></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="opportunity-section">
+  <!-- background video -->
+  <video autoplay muted loop playsinline class="opportunity-video">
+    <source src="{% static 'videos/demo_video2.mp4' %}" type="video/mp4">
+  </video>
+
+  <!-- overlay -->
+  <div class="opportunity-overlay"></div>
+
+  <div class="opportunity-content">
+    <h2 class="opportunity-title">OPPORTUNITIES</h2>
+
+    <div class="opportunity-cards">
+      <div class="opportunity-card">
+        <h3>STAY AHEAD</h3>
+        <p>Gain insights into emerging technologies like AI, robotics, cybersecurity, and green energy.</p>
+      </div>
+
+      <div class="opportunity-card">
+        <h3>CONNECT GLOBALLY</h3>
+        <p>Network with CEOs, investors, policymakers, and tech pioneers to unlock new opportunities.</p>
+      </div>
+
+      <div class="opportunity-card">
+        <h3>LEARN MORE</h3>
+        <p>Hear from industry leaders through keynotes, panel discussions, and real-world case studies.</p>
+      </div>
+
+      <div class="opportunity-card">
+        <h3>EMPOWER STARTUPS</h3>
+        <p>Startups get exposure, funding, and mentorship through pitch sessions and investor meetups.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="speaker-section">
+  <h2 class="speaker-title">SPEAKERS</h2>
+
+  <div class="speaker-grid">
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker1.jpg' %}" alt="Speaker">
+      <h3>Lt Cdr John Livingstone (R)</h3>
+      <p>Founder - Johnnette Group
+        Founder & Angel Investor - Livingstone Institute of Future Technologies (LIFT)
+        Secretary General - IFFAAD</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker8.jpeg' %}" alt="Speaker">
+      <h3>Rajiv Vermani</h3>
+      <p>Director & CEO - Digital and Automation at Hardcastle Petrofer</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker3.jpeg' %}" alt="Speaker">
+      <h3>Arjun Kumar</h3>
+      <p>Scientist F & Associate Director Directorate of Technology Development Fund, DRDO</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker4.jpeg' %}" alt="Speaker">
+      <h3>Cdr Navneet Kaushik (Veteran)</h3>
+      <p>Founder, Jamwant Ventures Angel Fund Former Scientist 'F', Project Director - Technology Development Board,
+        Department of Science and Technology Future technologies summit 2025 </p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker2.jpg' %}" alt="Speaker">
+      <h3>Pavleen Gujraal</h3>
+      <p>Bollywood Actor & Celebrity Anchor</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker6.jpg' %}" alt="Speaker">
+      <h3>Maj Gen SK Sharma, SM**, VSM</h3>
+      <p>CEO & MD Indo Russian Rifles Pvt Ltd (IRRPL)</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker7.jpeg' %}" alt="Speaker">
+      <h3>Prof M S Prasad</h3>
+      <p>Director - Amity Space Science Institute of Technology Ex - Scientist G, DRDO</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker5.jpeg' %}" alt="Speaker">
+      <h3>Prof (Dr) Nishakant Ojha</h3>
+      <p>Chairman - (Study Group) HQ IDS Ministry of Defence (Renowned Strategist in Advanced AI and Future
+        Technologies)</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker9.jpeg' %}" alt="Speaker">
+      <h3>Gp Captain (Dr.) R. K. Narang</h3>
+      <p>Author, Defense Analyst</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker10.jpg' %}" alt="Speaker">
+      <h3>Sanat Kaul</h3>
+      <p>Chairman - International Foundation of Aviation, Aerospace and Drones</p>
+    </div>
+  </div>
+</section>
+
+
 
 {% endblock %}

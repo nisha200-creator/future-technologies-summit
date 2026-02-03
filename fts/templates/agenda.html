@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Future Summit Hero{% endblock %}
+
+{% block content %}
+
+
+<section class="agenda-section">
+
+  <h2 class="agenda-title">Event Agenda</h2>
+
+  <!-- Day Switch -->
+  <div class="day-switch">
+    <a href="?day=day1" class="{% if active_day == 'day1' %}active{% endif %}">Day 1</a>
+    <a href="?day=day2" class="{% if active_day == 'day2' %}active{% endif %}">Day 2</a>
+  </div>
+
+  <!-- Agenda Cards -->
+  <div class="agenda-list">
+    {% for item in agendas %}
+    <div class="agenda-card">
+      <span class="time">{{ item.time }}</span>
+      <h3>{{ item.activity }}</h3>
+      <p>{{ item.speakers }}</p>
+      <small>{{ item.date }}</small>
+    </div>
+    {% empty %}
+    <p class="no-data">No agenda available</p>
+    {% endfor %}
+  </div>
+
+</section>
+
+
+{% endblock %}

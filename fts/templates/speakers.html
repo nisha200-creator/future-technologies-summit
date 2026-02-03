@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="speaker-section ">
+
+  <div class="w-[100px]">
+    <h1 class="speaker-title bg-gradient-to-l rounded from-pink-800  to-orange-500
+      text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-8xl
+      ">SPEAKERS
+    </h1>
+  </div>  
+
+  <div class="speaker-grid">
+    <!-- Speaker card -->
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker1.jpg' %}" alt="Speaker">
+      <h3>Lt Cdr John Livingstone (R)</h3>
+      <p>Founder - Johnnette Group
+        Founder & Angel Investor - Livingstone Institute of Future Technologies (LIFT)
+        Secretary General - IFFAAD</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker8.jpeg' %}" alt="Speaker">
+      <h3>Rajiv Vermani</h3>
+      <p>Director & CEO - Digital and Automation at Hardcastle Petrofer</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker3.jpeg' %}" alt="Speaker">
+      <h3>Arjun Kumar</h3>
+      <p>Scientist F & Associate Director Directorate of Technology Development Fund, DRDO</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker4.jpeg' %}" alt="Speaker">
+      <h3>Cdr Navneet Kaushik (Veteran)</h3>
+      <p>Founder, Jamwant Ventures Angel Fund Former Scientist 'F', Project Director - Technology Development Board,
+        Department of Science and Technology Future technologies summit 2025 </p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker2.jpg' %}" alt="Speaker">
+      <h3>Pavleen Gujraal</h3>
+      <p>Bollywood Actor & Celebrity Anchor</p>
+    </div>
+
+    <!-- row 2 -->
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker6.jpg' %}" alt="Speaker">
+      <h3>Maj Gen SK Sharma, SM**, VSM</h3>
+      <p>CEO & MD Indo Russian Rifles Pvt Ltd (IRRPL)</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker7.jpeg' %}" alt="Speaker">
+      <h3>Prof M S Prasad</h3>
+      <p>Director - Amity Space Science Institute of Technology Ex - Scientist G, DRDO</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker5.jpeg' %}" alt="Speaker">
+      <h3>Prof (Dr) Nishakant Ojha</h3>
+      <p>Chairman - (Study Group) HQ IDS Ministry of Defence (Renowned Strategist in Advanced AI and Future
+        Technologies)</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker9.jpeg' %}" alt="Speaker">
+      <h3>Gp Captain (Dr.) R. K. Narang</h3>
+      <p>Author, Defense Analyst</p>
+    </div>
+
+    <div class="speaker-card">
+      <img src="{% static 'images/speaker10.jpg' %}" alt="Speaker">
+      <h3>Sanat Kaul</h3>
+      <p>Chairman - International Foundation of Aviation, Aerospace and Drones</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

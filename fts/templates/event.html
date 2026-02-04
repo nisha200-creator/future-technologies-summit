@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Future Summit Hero{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- ================= CURRENT EVENT ================= -->
+
+    {% if current_event %}
+
+    <div class="row justify-content-center mb-5">
+
+        <div class="col-lg-8 col-xl-6">
+
+            <div class="ticket mx-auto">
+
+                <div class="ticket-main">
+
+                    <p class="ticket-label">LIVE EVENT</p>
+
+                    <h2 class="ticket-title">
+                        {{current_event.title}}
+                    </h2>
+
+                    <div class="ticket-date">
+                        {{current_event.date}} • {{current_event.time}}
+                    </div>
+
+                    <div class="ticket-location">
+                        {{current_event.location}}
+                    </div>
+
+                    <div class="ticket-info">
+                        <div>⌛ Duration:
+                            <strong>{{current_event.duration}}</strong>
+                        </div>
+
+                        <div>🔞 Age:
+                            <strong>{{current_event.age_limit}}</strong>
+                        </div>
+
+                        <div>🌐 Language:
+                            <strong>{{current_event.language}}</strong>
+                        </div>
+                    </div>
+
+                    <div class="ticket-price">
+                        ₹{{current_event.ticket_price}}
+                    </div>
+
+                    <a href="#" class="ticket-btn">
+                        Book Ticket
+                    </a>
+
+                </div>
+
+                <div class="ticket-strip">
+                    <div class="strip-content">
+                        <span>ENTRY</span>
+                        <div class="barcode"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    {% endif %}
+
+
+<br>
+
+    <!-- ================= UPCOMING EVENTS ================= -->
+
+    {% if upcoming_events %}
+
+
+    <div class="row g-4 justify-content-center">
+
+        {% for event in upcoming_events %}
+
+        <div class="col-lg-6 col-xl-4">
+
+            <div class="ticket mx-auto">
+
+                <div class="ticket-main">
+
+                    <p class="ticket-label">UPCOMING</p>
+
+                    <h2 class="ticket-title">
+                        {{event.title}}
+                    </h2>
+
+                    <div class="ticket-date">
+                        {{event.date}} • {{event.time}}
+                    </div>
+
+                    <div class="ticket-location">
+                        {{event.location}}
+                    </div>
+                    <a href="#" class="ticket-btn">
+                        Book Ticket
+                    </a>
+
+                </div>
+
+                <div class="ticket-strip">
+                    <div class="strip-content">
+                        <span>ENTRY</span>
+                        <div class="barcode"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

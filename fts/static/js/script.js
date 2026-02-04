@@ -11,112 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ignoreMobileResize: true
   });
 
-
-
-
-
-
-
-  
-
-  /* ================= HERO ================= */
-
-  const heroTL = gsap.timeline({ delay: 0.2 });
-
-  heroTL.from(".hero-bg", {
-    scale: 1.25,
-    opacity: 0,
-    duration: 2,
-    ease: "power3.out"
-  });
-
-  heroTL.from(".hero-content h1", {
-    y: 80,
-    opacity: 0,
-    duration: 1.2,
-    ease: "power4.out"
-  }, "-=1.4");
-
-  heroTL.from(".hero-content p", {
-    y: 30,
-    opacity: 0,
-    duration: 1,
-    ease: "power3.out"
-  }, "-=0.9");
-
-  heroTL.from(".hero-cards .card", {
-    y: 120,
-    opacity: 0,
-    stagger: 0.25,
-    duration: 1.1,
-    ease: "back.out(1.4)"
-  }, "-=0.8");
-
-
-
-  /* ================= ABOUT ================= */
-
-  const aboutTL = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top 75%",
-      toggleActions: "play none none reverse"
-    }
-  });
-
-  gsap.to(".about-bg", {
-    x: 120,
-    y: 60,
-    scale: 1.2,
-    duration:40,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut"
-  });
-
-  aboutTL.from(".about-tag", {
-    y: 40,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power3.out"
-  });
-
-  aboutTL.from(".about-left h2", {
-    y: 80,
-    opacity: 0,
-    duration: 1.1,
-    ease: "power4.out"
-  }, "-=0.5");
-
-  aboutTL.from(".review-item", {
-    y: 100,
-    opacity: 0,
-    stagger: 0.25,
-    duration: 1,
-    ease: "back.out(1.2)"
-  }, "-=0.7");
-
-  aboutTL.fromTo(".about-btn",
-    { y: 20, opacity: 0 },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: "power2.out"
-    },
-  "-=0.8");
-
-  aboutTL.from(".about-images img", {
-    y: 120,
-    opacity: 0,
-    stagger: 0.2,
-    duration: 1.2,
-    ease: "power3.out"
-  }, "-=0.9");
-
-
-
   /* ================= SMALL DESCRIPTION ================= */
 
   gsap.to(".small_description-bg", {
@@ -150,22 +44,22 @@ document.addEventListener("DOMContentLoaded", () => {
   sdTL.fromTo(".small_description-card",
     { y: 120, opacity: 0, scale: 0.96 },
     { y: 0, opacity: 1, scale: 1, duration: 1.2, ease: "power4.out" },
-  "-=0.6");
+    "-=0.6");
 
   sdTL.fromTo(".small_description-left img",
     { scale: 1.2, opacity: 0 },
     { scale: 1, opacity: 1, duration: 1.2, ease: "power3.out" },
-  "-=0.9");
+    "-=0.9");
 
   sdTL.fromTo(".small_description-number",
     { opacity: 0 },
     { opacity: 1, duration: 1 },
-  "-=1");
+    "-=1");
 
   sdTL.fromTo(".small_description-right p",
     { y: 40, opacity: 0 },
     { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
-  "-=0.8");
+    "-=0.8");
 
 
 
@@ -215,14 +109,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   oppTL.fromTo(".opportunity-video",
-    { scale:1.08 },
+    { scale: 1.08 },
     { scale: 1, duration: 2.5, ease: "power2.out" }
   );
 
   oppTL.fromTo(".opportunity-title",
     { y: 80, opacity: 0 },
     { y: 0, opacity: 1, duration: 1.2, ease: "power4.out" },
-  "-=1.8");
+    "-=1.8");
 
   oppTL.fromTo(".opportunity-card",
     { y: 120, opacity: 0, scale: 0.9 },
@@ -234,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 1.1,
       ease: "back.out(1.2)"
     },
-  "-=0.9");
+    "-=0.9");
 
 
 
@@ -289,8 +183,8 @@ window.addEventListener("load", () => {
       trigger: gallerySection,
       start: "top top",
       end: () => "+=" + scrollAmount,
-     scrub:1.2,
-     fastScrollEnd:true,
+      scrub: 1.2,
+      fastScrollEnd: true,
       pin: true,
       anticipatePin: 1
     }
@@ -307,30 +201,163 @@ window.addEventListener("load", () => {
 
 
 
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
 
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navLinks.classList.toggle("active");if (!window.gsap) return;
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active"); if (!window.gsap) return;
 
-    });
+  });
+}
+
+
+
+//  hero content H1 text animation
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+ const el = document.querySelector(".shatter");
+
+ if(!el) return;
+
+ const nodes = [...el.childNodes];
+
+ el.innerHTML = "";
+
+ let delay = 0;
+
+ nodes.forEach(node=>{
+
+   // keep <br>
+   if(node.nodeName === "BR"){
+      el.appendChild(document.createElement("br"));
+      return;
+   }
+
+   const text = node.textContent;
+
+   text.split("").forEach(letter=>{
+
+      const span = document.createElement("span");
+
+      span.innerHTML = letter === " " ? "&nbsp;" : letter;
+      span.style.animationDelay = delay + "ms";
+
+      delay += 40;
+
+      el.appendChild(span);
+   });
+
+ });
+
+  el.style.visibility = "visible";
+
+});
+
+
+//  animation for hero section image slide
+
+document.addEventListener("DOMContentLoaded", ()=>{
+
+  const media = document.querySelectorAll(".bg-media");
+  let index = 0;
+  let imageTimer;
+
+  function showMedia(i){
+
+
+    media.forEach(m => m.classList.remove("active"));
+
+    const current = media[i];
+    current.classList.add("active");
+
+   
+    if(current.tagName === "VIDEO"){
+
+        clearTimeout(imageTimer);
+
+        current.currentTime = 0;
+        current.play();
+
+        current.onended = nextMedia;
+    }
+
+ 
+    else{
+
+        imageTimer = setTimeout(nextMedia, 4000); 
+    }
   }
 
+  function nextMedia(){
+
+    index++;
+
+    if(index >= media.length){
+        index = 0; 
+    }
+
+    showMedia(index);
+  }
+
+ 
+  showMedia(index);
+
+});
 
 
 
-//  small description backhround animation
+//  about section animation
 
-// const section = document.querySelector(".small_description-section");
-// const bg = document.querySelector(".small_description-bg");
+// document.addEventListener("DOMContentLoaded", ()=>{
 
-// section.addEventListener("mousemove", (e)=>{
+//  const reveals = document.querySelectorAll(".reveal");
 
-//   const x = (e.clientX / window.innerWidth - 0.5) * 60;
-//   const y = (e.clientY / window.innerHeight - 0.5) * 60;
+//  const observer = new IntersectionObserver((entries)=>{
 
-//   bg.style.transform =
-//    `translate(${x}px, ${y}px) scale(1.2)`;
+//     entries.forEach(entry=>{
+
+//       if(entry.isIntersecting){
+//         entry.target.classList.add("show");
+//       }
+
+//     });
+
+//  },{
+//     threshold:0.18
+//  });
+
+//  reveals.forEach(el => observer.observe(el));
+
 // });
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+          if(entry.isIntersecting){
+              entry.target.classList.add("show");
+          }
+      });
+  },{
+      threshold:0.2
+  });
+
+  reveals.forEach(el => observer.observe(el));
+
+});
+
+
+
+
+
+
+//  ticket booking page js

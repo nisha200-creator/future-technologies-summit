@@ -358,6 +358,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
+//  event booking js
 
 
-//  ticket booking page js
+   
+    
+
+
+

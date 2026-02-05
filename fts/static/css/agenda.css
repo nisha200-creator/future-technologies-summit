@@ -1,6 +1,3 @@
-
-/* ================= AGENDA SECTION ================= */
-
 .agenda-section {
   padding: 120px 80px;
   background: #05010d;
@@ -8,9 +5,6 @@
   position: relative;
   overflow: hidden;
 }
-
-/* ================= MOVING GLOW BACKGROUND ================= */
-
 .agenda-section::before,
 .agenda-section::after {
   content: "";
@@ -49,26 +43,12 @@
   50%  { transform: translate(-8%, 10%) rotate(-180deg); }
   100% { transform: translate(0%, 0%) rotate(-360deg); }
 }
-
-
-
-
-
-
-
-
-
-/* ================= CONTENT LAYER FIX ================= */
-
 .agenda-title,
 .day-switch,
 .agenda-list {
   position: relative;
   z-index: 2;
 }
-
-/* ================= TITLE ================= */
-
 .agenda-title {
   text-align: center;
   font-size: 46px;
@@ -76,14 +56,10 @@
   margin-bottom: 50px;
   letter-spacing: 1px;
 }
-
-/* ================= DAY SWITCH ================= */
-
 .day-switch {
   text-align: center;
   margin-bottom: 70px;
 }
-
 .day-switch a {
   margin: 0 18px;
   padding: 14px 36px;
@@ -100,22 +76,17 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 40px rgba(122, 92, 255, 0.35);
 }
-
 .day-switch a.active {
   background: linear-gradient(135deg, #7a5cff, #9f8bff);
   color: #fff;
   box-shadow: 0 12px 45px rgba(122, 92, 255, 0.5);
 }
 
-/* ================= AGENDA LIST ================= */
 
 .agenda-list {
   max-width: 900px;
   margin: auto;
 }
-
-/* ================= AGENDA CARD ================= */
-
 .agenda-card {
   position: relative;
   padding: 28px 34px;
@@ -132,8 +103,6 @@
   transform: translateY(20px);
   animation: cardFadeUp 0.9s ease forwards;
 }
-
-/* Left glowing line */
 .agenda-card::before {
   content: "";
   position: absolute;
@@ -144,22 +113,17 @@
   background: linear-gradient(180deg, #7a5cff, transparent);
 }
 
-/* Hover effect */
+
 .agenda-card:hover {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
 }
-
-/* Card entry animation */
 @keyframes cardFadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-/* ================= CARD CONTENT ================= */
-
 .agenda-card .time {
   display: inline-block;
   font-size: 14px;
@@ -168,26 +132,20 @@
   color: #7a5cff;
   margin-bottom: 8px;
 }
-
 .agenda-card h3 {
   font-size: 22px;
   font-weight: 600;
   margin: 6px 0 8px;
 }
-
 .agenda-card p {
   opacity: 0.85;
   font-size: 15px;
   margin-bottom: 10px;
 }
-
 .agenda-card small {
   opacity: 0.6;
   font-size: 13px;
 }
-
-/* ================= EMPTY STATE ================= */
-
 .no-data {
   text-align: center;
   opacity: 0.7;
@@ -198,25 +156,108 @@
 
 
 
-/*  .agenda-section::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  background: linear-gradient(
-    120deg,
-    transparent 35%,
-    rgba(122,92,255,.18),
-    transparent 65%
-  );
-  animation: lightSweep 14s linear infinite;
+/* responsive  */
+
+/* ===== Tablet (≤ 1024px) ===== */
+@media (max-width: 1024px) {
+  .agenda-section {
+    padding: 100px 50px;
+  }
+
+  .agenda-title {
+    font-size: 40px;
+  }
+
+  .day-switch {
+    margin-bottom: 60px;
+  }
+
+  .agenda-list {
+    max-width: 100%;
+  }
 }
 
-@keyframes lightSweep {
-  from {
-    transform: translateX(-30%) translateY(30%);
+/* ===== Small Tablet / Large Mobile (≤ 768px) ===== */
+@media (max-width: 768px) {
+  .agenda-section {
+    padding: 80px 30px;
   }
-  to {
-    transform: translateX(30%) translateY(-30%);
+
+  .agenda-title {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+
+  .day-switch a {
+    display: inline-block;
+    margin: 10px 8px;
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+
+  .agenda-card {
+    padding: 24px 26px;
+  }
+
+  .agenda-card h3 {
+    font-size: 20px;
+  }
+
+  .agenda-card p {
+    font-size: 14px;
   }
 }
- */
+
+/* ===== Mobile (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .agenda-section {
+    padding: 70px 18px;
+  }
+
+  .agenda-title {
+    font-size: 28px;
+    letter-spacing: 0.5px;
+  }
+
+  .day-switch {
+    margin-bottom: 50px;
+  }
+
+  .day-switch a {
+    padding: 10px 22px;
+    font-size: 13px;
+    border-radius: 30px;
+  }
+
+  .agenda-card {
+    padding: 20px 20px;
+    margin-bottom: 22px;
+  }
+
+  .agenda-card h3 {
+    font-size: 18px;
+  }
+
+  .agenda-card p {
+    font-size: 14px;
+  }
+
+  .agenda-card small {
+    font-size: 12px;
+  }
+}
+
+/* ===== Very Small Devices (≤ 360px) ===== */
+@media (max-width: 360px) {
+  .agenda-title {
+    font-size: 24px;
+  }
+
+  .agenda-card h3 {
+    font-size: 17px;
+  }
+
+  .agenda-card p {
+    font-size: 13px;
+  }
+}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Agenda, Event
 from django.utils import timezone
 from django.shortcuts import render, redirect, get_object_or_404
+from .models import Event
 
 
 
@@ -39,13 +40,11 @@ def event_detail(request):
 
     today = timezone.now().date()
 
-    # nearest event (today OR future)
     current_event = Event.objects.filter(
         is_available=True,
         date__gte=today
     ).order_by('date').first()
 
-    # remaining upcoming events
     upcoming_events = Event.objects.filter(
         is_available=True,
         date__gt=current_event.date if current_event else today
@@ -54,4 +53,26 @@ def event_detail(request):
     return render(request, 'event.html', {
         'current_event': current_event,
         'upcoming_events': upcoming_events
+    })
+
+
+
+# event booking page view
+def event_booking(request, slug):
+    event = get_object_or_404(Event, slug=slug)
+
+    return render(request, 'event_booking.html', {
+        'event': event
+    })
+
+
+def payment_page(request, slug):
+    event = get_object_or_404(Event, slug=slug)
+    quantity = int(request.GET.get('qty', 1))
+    total_amount = event.ticket_price * quantity
+
+    return render(request, 'payment.html', {
+        'event': event,
+        'quantity': quantity,
+        'total_amount': total_amount
     })

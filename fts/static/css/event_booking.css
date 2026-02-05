@@ -1,0 +1,215 @@
+
+.container{
+    height: 75vh;
+}
+
+
+.ticket {
+    height: 357px !important;
+}
+
+.booking-ticket {
+    display: flex;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 25px 50px rgba(0,0,0,.15);
+    overflow: hidden;
+    position: relative;
+}
+
+.ticket-main {
+    padding: 9px !important;
+    flex: 1;
+}
+
+.ticket-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #ff5a5f;
+}
+
+.ticket-title {
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.ticket-date,
+.ticket-location {
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.ticket-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.ticket-divider {
+    border-top: 1px dashed #ccc;
+    margin: 20px 0;
+}
+
+.price-row,
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.qty-row {
+    margin-bottom: 15px;
+}
+
+.qty-row select {
+    width: 6%;
+    padding: 3px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.ticket-btn {
+    display: block;
+    margin-top: 20px;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff5a5f, #ff8a5c);
+    color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform .2s ease;
+}
+
+.ticket-btn:hover {
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* ===== STRIP ===== */
+
+.ticket-strip {
+    width: 90px;
+    background: #f6f6f6;
+    border-left: 2px dashed #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strip-content {
+    transform: rotate(-90deg);
+    text-align: center;
+}
+
+.strip-content span {
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.barcode {
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+    background: repeating-linear-gradient(
+        90deg,
+        #000,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+    );
+}
+
+
+/* responsive for all screen size */
+/* =========================
+   RESPONSIVE ONLY
+   ========================= */
+
+/* Prevent overflow on small screens */
+.booking-ticket {
+    max-width: 100%;
+}
+
+/* Make container flexible */
+.container {
+    height: auto;
+    min-height: 75vh;
+}
+
+/* Remove fixed height on small screens */
+@media (max-width: 991px) {
+    .ticket {
+        height: auto !important;
+    }
+}
+
+/* Tablet & Mobile layout */
+@media (max-width: 768px) {
+
+    .booking-ticket {
+        flex-direction: column;
+    }
+
+    .ticket-strip {
+        width: 100%;
+        border-left: none;
+        border-top: 2px dashed #ddd;
+    }
+
+    .strip-content {
+        transform: none;
+        padding: 12px 0;
+    }
+
+    .barcode {
+        margin: 8px auto 0;
+    }
+
+    .ticket-title {
+        font-size: 22px;
+    }
+
+    .price-row,
+    .total-row {
+        font-size: 16px;
+    }
+
+    .qty-row select {
+        width: 80px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+
+    .ticket-main {
+        padding: 12px !important;
+    }
+
+    .ticket-title {
+        font-size: 20px;
+    }
+
+    .ticket-info {
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .ticket-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* Large screens – keep proportions clean */
+@media (min-width: 1200px) {
+    .booking-ticket {
+        max-width: 900px;
+        margin: auto;
+    }
+}

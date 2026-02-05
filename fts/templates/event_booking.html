@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Book Ticket{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+
+            <div class="ticket mx-auto booking-ticket">
+
+                <!-- LEFT / MAIN TICKET -->
+                <div class="ticket-main">
+
+                    <p class="ticket-label">BOOK YOUR SEAT</p>
+
+                    <h2 class="ticket-title">{{ event.title }}</h2>
+
+                    <div class="ticket-date">
+                        {{ event.date }} • {{ event.time }}
+                    </div>
+
+                    <div class="ticket-location">
+                        {{ event.location }}
+                    </div>
+
+                    <div class="ticket-info">
+                        <div>⌛ Duration: <strong>{{ event.duration }}</strong></div>
+                        <div>🔞 Age: <strong>{{ event.age_limit }}</strong></div>
+                        <div>🌐 Language: <strong>{{ event.language }}</strong></div>
+                    </div>
+
+                    <div class="ticket-divider"></div>
+
+                    <div class="price-row">
+                        <span>Ticket Price</span>
+                        <strong>₹<span id="unitPrice">{{ event.ticket_price }}</span></strong>
+                    </div>
+
+                    <div class="qty-row">
+                        <label>Ticket Quantity</label>
+                        <select id="quantity">
+                            {% for i in "12345678910"|make_list %}
+                            <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="total-row">
+                        Total: ₹<span id="totalPrice">{{ event.ticket_price }}</span>
+                    </div>
+
+                    <a id="payBtn"
+                       href="{% url 'payment_page' event.slug %}?qty=1"
+                       class="ticket-btn">
+                        Proceed to Pay
+                    </a>
+
+                </div>
+
+                <!-- RIGHT STRIP -->
+                <div class="ticket-strip">
+                    <div class="strip-content">
+                        <span>ENTRY</span>
+                        <div class="barcode"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    const unitPrice = parseFloat("{{ event.ticket_price }}");
+    const qty = document.getElementById('quantity');
+    const totalPrice = document.getElementById('totalPrice');
+    const payBtn = document.getElementById('payBtn');
+
+    qty.addEventListener('change', function () {
+        const q = parseInt(this.value);
+        totalPrice.innerText = (unitPrice * q).toFixed(2);
+        payBtn.href = "{% url 'payment_page' event.slug %}?qty=" + q;
+    });
+</script>
+
+
+
+{% endblock %}

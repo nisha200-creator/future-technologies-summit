@@ -51,9 +51,10 @@
                         ₹{{current_event.ticket_price}}
                     </div>
 
-                    <a href="#" class="ticket-btn">
+                    <a href="{% url 'event_booking' current_event.slug %}" class="ticket-btn">
                         Book Ticket
                     </a>
+
 
                 </div>
 
@@ -72,7 +73,7 @@
     {% endif %}
 
 
-<br>
+    <br>
 
     <!-- ================= UPCOMING EVENTS ================= -->
 
@@ -102,9 +103,27 @@
                     <div class="ticket-location">
                         {{event.location}}
                     </div>
-                    <a href="#" class="ticket-btn">
+                    <div class="ticket-info">
+                        <div>⌛ Duration:
+                            <strong>{{current_event.duration}}</strong>
+                        </div>
+
+                        <div>🔞 Age:
+                            <strong>{{current_event.age_limit}}</strong>
+                        </div>
+
+                        <div>🌐 Language:
+                            <strong>{{current_event.language}}</strong>
+                        </div>
+                    </div>
+                    <div class="ticket-price">
+                        ₹{{event.ticket_price}}
+                    </div>
+
+                    <a href="{% url 'event_booking' event.slug %}" class="ticket-btn">
                         Book Ticket
                     </a>
+
 
                 </div>
 

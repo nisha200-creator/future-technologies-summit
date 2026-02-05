@@ -21,7 +21,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ================= NAVBAR ================= */
 .navbar {
   height: 80px;
   background: #ffffff;
@@ -33,11 +32,11 @@ body {
   position: relative;
   z-index: 1000;
 
-  /* premium depth */
+
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
-/* Logo */
+
 .logo {
   font-size: 20px;
   font-weight: 700;
@@ -45,12 +44,28 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+
+
+
+
+.logo img {
+  height: 120px;       
+  width: auto;
+  object-fit: contain;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
 .logo:hover {
   transform: translateY(-1px);
   opacity: 0.9;
 }
 
-/* ================= DESKTOP MENU ================= */
 .nav-links {
   display: flex;
   align-items: center;
@@ -72,7 +87,6 @@ body {
 
 
 
-/* Elegant underline */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -90,7 +104,6 @@ body {
   width: 22px;
 }
 
-/* ================= BUTTON ================= */
 .btn-register {
   background: linear-gradient(180deg, #111, #000);
   color: #fff;
@@ -101,6 +114,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-register:hover {
@@ -108,7 +122,6 @@ body {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* ================= HAMBURGER ================= */
 .hamburger {
   display: none;
   flex-direction: column;

@@ -126,3 +126,68 @@
     bottom: var(--distance, 10rem);
   }
 }
+
+
+
+/* ===============================
+   FOOTER RESPONSIVE (ADD ONLY)
+   =============================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .footer .content {
+    grid-template-columns: 1fr;
+    grid-gap: 2.5rem;
+    text-align: center;
+  }
+
+  .footer .content > div {
+    align-items: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer {
+    min-height: auto;
+  }
+
+  .footer .content {
+    padding: 1.8rem 1.2rem;
+    grid-gap: 2rem;
+  }
+
+  .footer-links {
+    gap: 1.4rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .footer .content {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-links {
+    gap: 1rem;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+
+  .footer-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra small */
+@media (max-width: 360px) {
+  .footer-links {
+    gap: 0.8rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+  }
+}

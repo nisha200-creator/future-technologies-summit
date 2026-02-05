@@ -19,7 +19,7 @@
 
 .ticket{
     display:flex;
-    width:100%;
+    width:50%;
     max-width:980px;
     height:325px;
 
@@ -278,5 +278,99 @@
 
     .strip-content{
         transform:none;
+    }
+}
+
+
+
+
+/* 
+.ticket,
+.event-wrapper,
+.container {
+    max-width: 100% !important;
+} */
+
+/* Laptop & below */
+@media (max-width: 1200px) {
+    .event-wrapper .row {
+        gap: 40px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+
+    .event-wrapper .row {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .ticket {
+        position: relative;
+        top: 0;
+    }
+
+    .ticket-strip {
+        min-height: 90px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .ticket-main {
+        padding: 24px;
+    }
+
+    .ticket-title {
+        font-size: 22px;
+    }
+
+    .ticket-date {
+        font-size: 15px;
+    }
+
+    .ticket-price {
+        font-size: 28px;
+    }
+
+    .barcode {
+        width: 90px;
+        height: 38px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+
+    .ticket-main {
+        padding: 20px;
+    }
+
+    .ticket-label {
+        letter-spacing: 3px;
+    }
+
+    .ticket-title {
+        font-size: 20px;
+    }
+
+    .ticket-info {
+        font-size: 13px;
+    }
+
+    .ticket-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+
+    .ticket{
+        width: 100%;
     }
 }

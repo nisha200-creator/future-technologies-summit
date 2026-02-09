@@ -1,9 +1,40 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Future Summit Hero{% endblock %}
+{% block title %}
+Upcoming Tech Events | AI, Robotics & Innovation Conferences 2026
+{% endblock %}
+
+
+{% block description %}
+Explore live and upcoming technology events including AI, robotics, cybersecurity, and future innovations.
+{% endblock %}
+
+{% block og_title %}
+Future Technology Events | Book Tech Conferences & Summits
+{% endblock %}
+
+{% block og_description %}
+Discover the latest tech events and innovation summits. Join industry leaders and experience the future of technology.
+{% endblock %}
+
+{% block og_image %}
+{{ request.scheme }}://{{ request.get_host }}{% static 'images/seo-banner.png' %}
+{% endblock %}
+
+
+{% block twitter_title %}
+Upcoming Technology Events & AI Conferences
+{% endblock %}
+
+{% block twitter_description %}
+Join the most exciting technology events featuring AI, robotics, and next-gen innovation.
+{% endblock %}
+
+
 
 {% block content %}
+
 
 <div class="container py-5">
 

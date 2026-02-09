@@ -1,7 +1,75 @@
 {% extends "base.html" %}
-{% block title %}Book Ticket{% endblock %}
+{% load static %}
+
+{% block title %}
+Book Tickets for {{ event.title }} | Future Technologies Summit
+{% endblock %}
+
+
+
+{% block description %}
+Book tickets for {{ event.title }} on {{ event.date }} at {{ event.location }}. Limited seats available — reserve now!
+{% endblock %}
+
+
+
+{% block og_title %}
+Book Tickets for {{ event.title }}
+{% endblock %}
+
+{% block og_description %}
+Reserve your spot for {{ event.title }}. Limited seats available — book now!
+{% endblock %}
+
+{% block og_image %}
+{{ request.scheme }}://{{ request.get_host }}{{ event.banner.url }}
+{% endblock %}
+
+
+
+{% block twitter_title %}
+{{ event.title }} | Ticket Booking
+{% endblock %}
+
+{% block twitter_description %}
+Don't miss {{ event.title }} on {{ event.date }}. Book your tickets today.
+{% endblock %}
+
+
+
 
 {% block content %}
+
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Event",
+ "name": "{{ event.title }}",
+ "startDate": "{{ event.date|date:'Y-m-d' }}",
+ "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+ "eventStatus": "https://schema.org/EventScheduled",
+ "location": {
+   "@type": "Place",
+   "name": "{{ event.location }}"
+ },
+ "image": [
+   "{{ request.scheme }}://{{ request.get_host }}{{ event.banner.url }}"
+ ],
+ "description": "Book tickets for {{ event.title }} and explore the future of technology.",
+ "offers": {
+   "@type": "Offer",
+   "price": "{{ event.ticket_price }}",
+   "priceCurrency": "INR",
+   "availability": "https://schema.org/InStock",
+   "url": "{{ request.build_absolute_uri }}"
+ },
+ "organizer": {
+   "@type": "Organization",
+   "name": "Future Technologies Summit"
+ }
+}
+</script>
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-8 col-xl-6">

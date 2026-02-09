@@ -1,9 +1,62 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>{% block title %}FTS{% endblock %}</title>
+
+  <!-- Mobile Optimization -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary SEO -->
+  <title>{% block title %}Future Technologies Summit | AI, Robotics & Innovation Conference{% endblock %}</title>
+
+  <meta name="description"
+    content="{% block description %}Future Technologies Summit is a premier tech conference showcasing AI, robotics, cybersecurity, and next-generation innovations. Join industry leaders and explore the future of technology.{% endblock %}">
+
+  <meta name="keywords"
+    content="technology summit, AI conference, robotics event, tech expo, innovation conference, future tech, cybersecurity event">
+
+  <!-- <meta name="author" content="Future Technologies Summit"> -->
+
+  <!-- Indexing -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% block og_title %}Future Technologies Summit{% endblock %}">
+  <meta property="og:description"
+    content="{% block og_description %}Discover AI, robotics, and emerging technologies at the Future Technologies Summit.{% endblock %}">
+
+  <meta property="og:image"
+    content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'images/seo-banner.png' %}{% endblock %}">
+
+
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  <meta property="og:site_name" content="Future Technologies Summit">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="{% block twitter_title %}Future Technologies Summit{% endblock %}">
+
+  <meta name="twitter:description"
+    content="{% block twitter_description %}Join the biggest future tech conference featuring AI, robotics, and innovation leaders.{% endblock %}">
+
+
+  <meta name="twitter:image"
+    content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'images/seo-banner.png' %}{% endblock %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{% static 'images/FTSLOGO.png' %}">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="{% static 'css/footer.css' %}">
   <link rel="stylesheet" href="{% static 'css/header.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -11,25 +64,30 @@
   <link rel="stylesheet" href="{% static 'css/event.css' %}">
   <link rel="stylesheet" href="{% static 'css/event_booking.css' %}">
   <link rel="stylesheet" href="{% static 'css/payment.css' %}">
-  
+  <link rel="stylesheet" href="{% static 'css/sponsors.css' %}">
 
-  
 
 </head>
+
 <body>
 
   {% include "header.html" %}
-
   {% block content %}{% endblock %}
 
   {% include "footer.html" %}
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 
-<script src="{% static 'js/script.js' %}"></script>
-<script src="{% static 'js/agenda.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+
+
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/agenda.js' %}"></script>
+  <script src="{% static 'js/three-bg.js' %}"></script>
 </body>
+
 </html>

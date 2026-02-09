@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* ✅ FIX GALLERY AFTER IMAGES LOAD (VERY IMPORTANT) */
+/* FIX GALLERY AFTER IMAGES LOAD (VERY IMPORTANT) */
 window.addEventListener("load", () => {
 
   const galleryWrapper = document.querySelector(".gallery-wrapper");
@@ -195,12 +195,6 @@ window.addEventListener("load", () => {
 
 
 
-
-
-
-
-
-
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
@@ -214,128 +208,11 @@ if (hamburger && navLinks) {
 
 
 
-//  hero content H1 text animation
 
-
-
-document.addEventListener("DOMContentLoaded", function(){
-
- const el = document.querySelector(".shatter");
-
- if(!el) return;
-
- const nodes = [...el.childNodes];
-
- el.innerHTML = "";
-
- let delay = 0;
-
- nodes.forEach(node=>{
-
-   // keep <br>
-   if(node.nodeName === "BR"){
-      el.appendChild(document.createElement("br"));
-      return;
-   }
-
-   const text = node.textContent;
-
-   text.split("").forEach(letter=>{
-
-      const span = document.createElement("span");
-
-      span.innerHTML = letter === " " ? "&nbsp;" : letter;
-      span.style.animationDelay = delay + "ms";
-
-      delay += 40;
-
-      el.appendChild(span);
-   });
-
- });
-
-  el.style.visibility = "visible";
-
-});
-
-
-//  animation for hero section image slide
-
-document.addEventListener("DOMContentLoaded", ()=>{
-
-  const media = document.querySelectorAll(".bg-media");
-  let index = 0;
-  let imageTimer;
-
-  function showMedia(i){
-
-
-    media.forEach(m => m.classList.remove("active"));
-
-    const current = media[i];
-    current.classList.add("active");
-
-   
-    if(current.tagName === "VIDEO"){
-
-        clearTimeout(imageTimer);
-
-        current.currentTime = 0;
-        current.play();
-
-        current.onended = nextMedia;
-    }
-
- 
-    else{
-
-        imageTimer = setTimeout(nextMedia, 4000); 
-    }
-  }
-
-  function nextMedia(){
-
-    index++;
-
-    if(index >= media.length){
-        index = 0; 
-    }
-
-    showMedia(index);
-  }
-
- 
-  showMedia(index);
-
-});
 
 
 
 //  about section animation
-
-// document.addEventListener("DOMContentLoaded", ()=>{
-
-//  const reveals = document.querySelectorAll(".reveal");
-
-//  const observer = new IntersectionObserver((entries)=>{
-
-//     entries.forEach(entry=>{
-
-//       if(entry.isIntersecting){
-//         entry.target.classList.add("show");
-//       }
-
-//     });
-
-//  },{
-//     threshold:0.18
-//  });
-
-//  reveals.forEach(el => observer.observe(el));
-
-// });
-
-
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -358,11 +235,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-//  event booking js
-
-
-   
-    
 
 
 

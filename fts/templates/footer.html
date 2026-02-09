@@ -7,11 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Navbar</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/agenda.css' %}">
+
 </head>
 
 <body>
@@ -410,8 +413,28 @@
                     <a href="/speakers">Speakers</a>
                     <a href="/sponsors">Sponsors</a>
                 </div>
+                <div class="footer-social">
 
-                <p class="footer-text" style="display: flex; justify-content: center;">© Livingstone Institute of Future Technologies. <br>
+                    <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F106290364%2Fadmin%2Fdashboard%2F" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://api.whatsapp.com/send?phone=919205625360&text=Hi%2C%20I%27m%20Interested%20in%20Future%20Technologies%20Summit%202025" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/futuretechnologies_/" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/@FutureTechnologiesFT" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                </div>
+
+                <p class="footer-text" style="display: flex; justify-content: center;">© Livingstone Institute of Future
+                    Technologies. <br>
                     All Rights Reserved.<br>
                     Terms & Conditions and Privacy Policy.</p>
             </div>
@@ -428,6 +451,12 @@
             </defs>
         </svg>
 
+        <!-- SOCIAL BAR -->
+
+
+
+
+    </div>
 
 
 
@@ -435,11 +464,12 @@
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-        <script src="{% static 'js/script.js' %}"></script>
-        <script src="{% static 'js/agenda.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/agenda.js' %}"></script>
 </body>
 
 </html>

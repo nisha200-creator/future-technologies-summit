@@ -5,52 +5,43 @@
 
 {% block content %}
 
-
-
-
-<section class="hero">
-  <div class="hero-bg">
-    <video class="bg-media active" autoplay muted playsinline preload="auto">
+<!-- <div class="hero-bg">
+    <video class="bg-media active" autoplay muted loop playsinline preload="metadata">
       <source src="{% static 'videos/demo1.mp4' %}" type="video/mp4">
     </video>
-    <img class="bg-media" src="{% static 'images/fts-img1.jpeg' %}" />
-    <img class="bg-media" src="{% static 'images/fts-img2.jpeg' %}" />
-  </div>
+  </div> -->
+
+
+<section class="hero">  
+  <canvas id="three-bg-hero"></canvas>
+
   <div class="hero-content">
-    <h1 class="shatter">
+    <h1 class="hero-title">
       FUTURE<br>
       TECHNOLOGIES<br>
       SUMMIT
     </h1>
-    <p>
+    <p class="hero-sub">
       Experience The Future At Future Technologies Summit
     </p>
   </div>
-
-  
   <div class="hero-cards">
     <a href="{% url 'event_detail' %}" class="card-link">
-
-      <div class="card">
+      <div class="glass-card">
         <span>Register as</span>
         <h3>ATTENDEE</h3>
       </div>
     </a>
-    <!-- <div class="card dark">
-      <span>Register as</span>
-      <h3>DELEGATE</h3>
-    </div> -->
   </div>
-  
 </section>
 
 
-<!-- example -->
 
 
 
 
 <section class="about-section">
+  <canvas id="three-about"></canvas>
   <div class="about-bg"></div>
 
   <div class="about-container">
@@ -97,6 +88,7 @@
   </div>
 
   <div class="why-right">
+     <canvas id="three-why"></canvas>
     <div class="why-content">
       <h2>FUTURE TECH SUMMIT <br>OVERVIEW<br></h2>
       <div class="why-item">
@@ -144,13 +136,9 @@
 
 
 <section class="small_description-section ">
+  <canvas id="three-outcomes"></canvas> 
   <div class="small_description-bg">
-
-
   </div>
-
-
-
   <div class="small_description-header">
     <h2>ANTICIPATED OUTCOMES</h2>
   </div>
@@ -209,9 +197,7 @@
 
 
 <section class="photo-slide-section">
-  <video class="photo-bg-video" autoplay muted loop playsinline>
-    <source src="{% static 'videos/demo.mp4' %}" type="video/mp4">
-  </video>
+   <canvas id="three-recap"></canvas>
 
   <div class="photo-slide-content">
     <span class="small_description-tag">RECAP</span>
@@ -356,3 +342,4 @@
 
 
 {% endblock %}
+

@@ -4,6 +4,8 @@ from django.utils import timezone
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Event
 
+from .utils import images, partners
+
 
 
 
@@ -30,7 +32,7 @@ def speakers_page(request):
 
 
 def sponsors_page(request):
-    return render(request, 'sponsors.html')
+    return render(request, 'sponsors.html', {"images": images, "partners":partners})
 
 
 

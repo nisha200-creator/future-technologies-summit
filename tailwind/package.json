@@ -1,0 +1,18 @@
+{
+  "name": "tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "set TAILWIND_DISABLE_TOUCH=true && npx tailwindcss -i ./src/input.css -o ../static/css/output.css --watch --poll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.3.3"
+  }
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 {% load static %}
 
@@ -145,4 +146,131 @@
 
 
 
+=======
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="min-h-screen font-jockey bg-white">
+    <div class="max-w-[1400px] p-10 mx-auto">
+        <h1
+            class="text-3xl sm:text-4xl lg:text-8xl bg-gradient-to-r from-indigo-800 to-pink-600 uppercase bg-clip-text text-transparent max-w-[580px]">
+            Featured Sponsor Circle
+        </h1>
+        <h2 class="mt-5 md:mt-10 text-xl sm:text-3xl md:text-5xl uppercase text-black">
+            Supporting Partners
+        </h2>
+
+        <div
+            class="mt-[20px] rounded md:mt-[120px] sm:pl-20 sm:pt-5 grid border grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-5 relative sponsor-section">
+            <div class="floating-object">
+                <img src="{% static 'icons/flower.png' %}" alt="">
+            </div>
+            {% for image in images %}
+            <div class="h-[200px] w-[200px] flex items-center justify-center mx-auto sponsor-card">
+                <img class="w-[190px] shadow-lg border md:grayscale hover:grayscale-0 transition-all duration-300"
+                    src="{% static 'sponsors/'|add:image %}" alt="">
+                <!-- <img class="w-[190px] absolute top-[0px] left-0 z-10 hover:opacity-0" src="{% static 'sponsors/'|add:image %}" alt=""> -->
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+<section class="min-h-screen bg-gradient-to-r from-black to-indigo-950">
+    <div class="max-w-[1400px] p-10 mx-auto">
+        <div class="main">
+            <div class="logo-outer bg-gradient-to-t from-[#DA4453] to-[#89216B]
+  w-[260px] sm:w-[600px] md:w-[800px] lg:w-[1200px] h-[60px] md:h-[100px] lg:h-[200px] mx-auto flex items-center justify-center rounded-[3rem]
+  ">
+                <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 150">
+                    <!-- <style>
+        .logo-text { 
+          font-family: 'Jockey One', sans-serif; 
+          font-weight: 800; 
+          font-size: 140px; 
+          text-transform: uppercase; 
+          letter-spacing: 5px; 
+          fill: #0e100f; 
+        }
+      </style> -->
+
+                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
+                        class="logo-text font-jockey font-extrabold text-[150px] sm:text-[100px] md:text-[140px] uppercase tracking-[5px] fill-[#0e100f]">
+                        MEDIA PARTNERS
+                    </text>
+                </svg>
+            </div>
+        </div>
+
+        <div
+            class="mt-[20px] rounded md:mt-[120px] max-w-[400px] w-full md:max-w-[800px] 2xl:max-w-[1200px] mx-auto pt-5 grid border grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-5 relative sponsor-section bg-white">
+            <div class="floating-object hidden lg:block">
+                <img src="{% static 'icons/flower.png' %}" alt="">
+            </div>
+            {% for partner in partners %}
+            <div class="h-[200px] w-[200px] flex items-center justify-center mx-auto sponsor-card">
+                <img class="w-[190px] shadow-lg border md:grayscale hover:grayscale-0 transition-all duration-300"
+                    src="{% static 'partners/'|add:partner %}" alt="">
+                
+            </div>
+            {% endfor %}
+        </div>
+
+</section>
+
+
+
+<!-- This section is running fine -->
+<section class="font-jockey py-10 w-full bg-gradient-to-r from-indigo-800 via-indigo-900 to-purple-700 text-white">
+    <h1 class="text-3xl uppercase sm:text-2xl md:text-4xl lg:text-6xl xl:text-8xl text-center mb-10">
+        <span class="inline-block" id="txt-animate">Become</span> a <span class="sponsor">s</span>ponsor
+    </h1>
+
+    <div class="max-w-[300px] md:max-w-[1200px] w-full mx-auto">
+        <p class="text-sm sm:text-xl lg:text-2xl">
+            The Future Tech Summit provides exclusive, customized sponsorship opportunities tailored to your
+            organization's objectives and budget. As a sponsor, you will benefit from enhanced brand visibility, direct
+            engagement with industry leaders, and valuable networking opportunities with potential clients before,
+            during, and after the event. Sponsorship enables you to position your company as an industry leader,
+            showcase your expertise, and gain strategic exposure through high-impact branding, thought leadership
+            sessions, and exclusive partnership benefits. Align with the Future Tech Summit to maximize your reach,
+            strengthen your market presence, and be at the forefront of innovation and technological advancements.
+        </p>
+
+    </div>
+<!-- <div class="reveal-section max-w-[300px] md:max-w-[1200px] w-full mx-auto">
+    <p class="reveal-text text-sm sm:text-xl lg:text-2xl">
+        The Future Tech Summit provides exclusive, customized sponsorship opportunities tailored to your
+        organization's objectives and budget. As a sponsor, you will benefit from enhanced brand visibility, direct
+        engagement with industry leaders, and valuable networking opportunities with potential clients before,
+        during, and after the event. Sponsorship enables you to position your company as an industry leader,
+        showcase your expertise, and gain strategic exposure through high-impact branding, thought leadership
+        sessions, and exclusive partnership benefits. Align with the Future Tech Summit to maximize your reach,
+        strengthen your market presence, and be at the forefront of innovation and technological advancements.
+    </p>
+</div> -->
+
+
+    <!-- <div
+        class="p-container relative w-full max-w-5xl mx-auto my-20 p-12 md:p-24 bg-[#0e100f] overflow-hidden rounded-3xl border border-white/5 cursor-none">
+
+        <div class="relative z-10 pointer-events-none select-none">
+            <p class="text-2xl md:text-4xl text-white font-medium leading-tight">
+                The Future Tech Summit provides exclusive, customized sponsorship opportunities tailored to your
+                organization's objectives and budget. As a sponsor, you will benefit from enhanced brand visibility,
+                direct engagement with industry leaders, and valuable networking opportunities with potential
+                clients before, during, and after the event. Sponsorship enables you to position your company as an
+                industry leader, showcase your expertise, and gain strategic exposure through high-impact branding,
+                thought leadership sessions, and exclusive partnership benefits. Align with the Future Tech Summit
+                to maximize your reach, strengthen your market presence, and be at the forefront of innovation and
+                technological advancements.
+            </p>
+        </div>
+
+        <div id="rain-wrap" class="absolute inset-0 z-0 pointer-events-none"></div>
+    </div> -->
+
+</section>
+>>>>>>> 2a0e38f (Sponsor page implementation)
 {% endblock %}

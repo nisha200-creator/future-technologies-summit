@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
 
@@ -57,6 +58,13 @@
   <link rel="icon" type="image/png" href="{% static 'images/FTSLOGO.png' %}">
 
   <!-- CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Iceland&family=Irish+Grover&family=Jockey+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/output.css'%}">
+  <link rel="stylesheet" href="{% static 'css/sponsors.css' %}">
   <link rel="stylesheet" href="{% static 'css/footer.css' %}">
   <link rel="stylesheet" href="{% static 'css/header.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -67,7 +75,11 @@
   <link rel="stylesheet" href="{% static 'css/sponsors.css' %}">
 
 
+
+
+
 </head>
+
 
 <body>
 
@@ -76,18 +88,20 @@
 
   {% include "footer.html" %}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="{% static 'js/animate.js' %}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
 
 
-  <script src="{% static 'js/script.js' %}"></script>
-  <script src="{% static 'js/agenda.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/agenda.js' %}"></script>
   <script src="{% static 'js/three-bg.js' %}"></script>
 </body>
+
 
 </html>

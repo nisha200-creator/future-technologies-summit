@@ -55,8 +55,8 @@ gsap.set("main", { perspective: 650 });
 
 const outerRX = gsap.quickTo(".logo-outer", "rotationX", { ease: "power3" });
 const outerRY = gsap.quickTo(".logo-outer", "rotationY", { ease: "power3" });
-const innerX = gsap.quickTo(".logo", "x", { ease: "power3" });
-const innerY = gsap.quickTo(".logo", "y", { ease: "power3" });
+const innerX = gsap.quickTo(".sponsor-logo", "x", { ease: "power3" });
+const innerY = gsap.quickTo(".sponsor-logo", "y", { ease: "power3" });
 
 main.addEventListener("pointermove", (e) => {
   outerRX(gsap.utils.interpolate(15, -15, e.y / window.innerHeight));

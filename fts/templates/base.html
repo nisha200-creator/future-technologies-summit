@@ -72,7 +72,8 @@
   <link rel="stylesheet" href="{% static 'css/event.css' %}">
   <link rel="stylesheet" href="{% static 'css/event_booking.css' %}">
   <link rel="stylesheet" href="{% static 'css/payment.css' %}">
-  <link rel="stylesheet" href="{% static 'css/sponsors.css' %}">
+  <link rel="stylesheet" href="{% static 'css/speakers.css' %}">
+
 
 
 
@@ -81,25 +82,25 @@
 </head>
 
 
-<body>
+<body class="font-jockey">
 
   {% include "header.html" %}
   {% block content %}{% endblock %}
 
   {% include "footer.html" %}
 
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
   <script src="{% static 'js/animate.js' %}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
 
 
-    <script src="{% static 'js/script.js' %}"></script>
-    <script src="{% static 'js/agenda.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/agenda.js' %}"></script>
   <script src="{% static 'js/three-bg.js' %}"></script>
 </body>
 

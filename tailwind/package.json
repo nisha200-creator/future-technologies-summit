@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "set TAILWIND_DISABLE_TOUCH=true && npx tailwindcss -i ./src/input.css -o ../static/css/output.css --watch --poll"
+    "dev": "npx tailwindcss -i ./src/input.css -o ../fts/static/css/output.css --watch"
   },
   "keywords": [],
   "author": "",

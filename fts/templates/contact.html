@@ -1,8 +1,157 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
-<section class="min-h-screen w-full bg-white">
+{% block title %}Contact Us | Future Technologies Summit{% endblock %}
 
+
+{% block content %}
+<section class="min-h-screen w-full bg-slate-900 text-white pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <!-- Decorative Background Elements -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        <div
+            class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse">
+        </div>
+        <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"
+            style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-1/4 left-1/2 w-96 h-96 bg-pink-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"
+            style="animation-delay: 4s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 tracking-tight"
+                style="font-family: 'Iceland', sans-serif;">
+                GET IN TOUCH
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto font-sans">
+                Have questions about the Future Technologies Summit? We're here to help. Reach out to our team regarding
+                tickets, speaking opportunities, or sponsorships.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-start">
+
+            <!-- Contact Information -->
+            <div class="space-y-8">
+                <div
+                    class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-colors duration-300 shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-white" style="font-family: 'Jockey One', sans-serif;">
+                        Contact Information</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-200 font-sans">Location</h4>
+                                <p class="text-gray-400 mt-1 font-sans">A-38, Sector 67, Noida <br>Uttar Pradesh, India
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400">
+                                <i class="fa-solid fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-200 font-sans">Email Us</h4>
+                                <p class="text-gray-400 mt-1 font-sans">
+                                    <a href=""
+                                        class="hover:text-purple-400 transition-colors">info@futuretechnologiessummit.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-400">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-200 font-sans">Call Us</h4>
+                                <p class="text-gray-400 mt-1 font-sans">
+                                    <a href="" class="hover:text-pink-400 transition-colors">+91 9999999999</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <h4 class="text-lg font-semibold text-gray-200 mb-4 font-sans">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-blue-700 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 shadow-2xl relative">
+                <h3 class="text-2xl font-bold mb-6 text-white" style="font-family: 'Jockey One', sans-serif;">Send us a
+                    Message</h3>
+
+                <form action="#" method="POST" class="space-y-6 font-sans">
+                    {% csrf_token %}
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="name" class="block text-sm font-medium text-gray-300">Full Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-500 transition-all outline-none"
+                                placeholder="John Doe">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="email" class="block text-sm font-medium text-gray-300">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-500 transition-all outline-none"
+                                placeholder="john@example.com">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="subject" class="block text-sm font-medium text-gray-300">Subject</label>
+                        <select id="subject" name="subject" required
+                            class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-500 transition-all outline-none [&>option]:bg-slate-900">
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Sponsorship">Sponsorship & Exhibiting</option>
+                            <option value="Speaking">Speaking Opportunities</option>
+                            <option value="Ticketing">Ticketing & Registration</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-500 transition-all outline-none resize-none"
+                            placeholder="How can we help you?"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-4 px-6 mt-4 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-bold text-lg hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transform hover:-translate-y-1 transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] border-none cursor-pointer">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
 </section>
 {% endblock %}

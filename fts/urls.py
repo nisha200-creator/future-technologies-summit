@@ -39,6 +39,7 @@ urlpatterns = [
     path('event/<slug:slug>/payment/', views.payment_page, name='payment_page'),
 
     path('terms-and-conditions/', tnc, name='tnc'),
-    path('contact/',contact, name = 'contact' ),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
+    path('refund-policy/', views.refund_policy, name='refund_policy'),
+    path('contact/', contact, name='contact'),
 ]
-

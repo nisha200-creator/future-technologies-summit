@@ -742,6 +742,10 @@ video {
   margin-top: 20px;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .block {
   display: block;
 }
@@ -912,6 +916,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .place-items-center {
@@ -1268,6 +1276,14 @@ video {
   padding-top: 2rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1365,6 +1381,10 @@ video {
 
 .tracking-tight {
   letter-spacing: -0.025em;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
 }
 
 .text-black {

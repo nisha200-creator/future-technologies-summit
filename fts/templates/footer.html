@@ -415,11 +415,13 @@
                 </div>
                 <div class="footer-social">
 
-                    <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F106290364%2Fadmin%2Fdashboard%2F" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F106290364%2Fadmin%2Fdashboard%2F"
+                        aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
 
-                    <a href="https://api.whatsapp.com/send?phone=919205625360&text=Hi%2C%20I%27m%20Interested%20in%20Future%20Technologies%20Summit%202025" aria-label="WhatsApp">
+                    <a href="https://api.whatsapp.com/send?phone=919205625360&text=Hi%2C%20I%27m%20Interested%20in%20Future%20Technologies%20Summit%202025"
+                        aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
 
@@ -433,10 +435,19 @@
 
                 </div>
 
-                <p class="footer-text" style="display: flex; justify-content: center;">© Livingstone Institute of Future
-                    Technologies. <br>
-                    All Rights Reserved.<br>
-                    Terms & Conditions and Privacy Policy.</p>
+                <div class="footer-links mt-4 text-sm font-sans"
+                    style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="{% url 'tnc' %}" class="hover:text-purple-400 transition-colors">Terms & Conditions</a>
+                    <a href="{% url 'privacy_policy' %}" class="hover:text-purple-400 transition-colors">Privacy
+                        Policy</a>
+                    <a href="{% url 'refund_policy' %}" class="hover:text-purple-400 transition-colors">Refund
+                        Policy</a>
+                </div>
+
+                <p class="footer-text mt-4 text-center font-sans tracking-wide">
+                    © Livingstone Institute of Future Technologies.<br>
+                    All Rights Reserved.
+                </p>
             </div>
         </div>
 

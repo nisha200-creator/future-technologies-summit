@@ -82,6 +82,12 @@ def payment_page(request, slug):
 def tnc(request):
     return render(request, 'tnc.html')
 
+def privacy_policy(request):
+    return render(request, 'privacy.html')
+
+def refund_policy(request):
+    return render(request, 'refund.html')
+
 from django.contrib import messages
 from .forms import ContactForm
 

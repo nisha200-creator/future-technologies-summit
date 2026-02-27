@@ -82,5 +82,18 @@ def payment_page(request, slug):
 def tnc(request):
     return render(request, 'tnc.html')
 
+from django.contrib import messages
+from .forms import ContactForm
+
 def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you for getting in touch! We will get back to you shortly.")
+            return redirect('contact')
+        else:
+            print("Form errors:", form.errors)
+            messages.error(request, "There was an error with your submission. Please try again.")
+    
     return render(request, 'contact.html')

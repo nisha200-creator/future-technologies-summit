@@ -23,7 +23,7 @@
 
 
 from django.urls import path
-from .views import home, agenda_page, speakers_page, sponsors_page
+from .views import home, agenda_page, speakers_page, sponsors_page, tnc, contact
 from . import views
 
 urlpatterns = [
@@ -37,5 +37,8 @@ urlpatterns = [
     # slug-based booking & payment
     path('event/<slug:slug>/booking/', views.event_booking, name='event_booking'),
     path('event/<slug:slug>/payment/', views.payment_page, name='payment_page'),
+
+    path('terms-and-conditions/', tnc, name='tnc'),
+    path('contact/',contact, name = 'contact' ),
 ]
 

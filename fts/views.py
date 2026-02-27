@@ -78,3 +78,9 @@ def payment_page(request, slug):
         'quantity': quantity,
         'total_amount': total_amount
     })
+
+def tnc(request):
+    return render(request, 'tnc.html')
+
+def contact(request):
+    return render(request, 'contact.html')
